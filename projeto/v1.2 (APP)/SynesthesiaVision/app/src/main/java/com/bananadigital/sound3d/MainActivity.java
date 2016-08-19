@@ -122,7 +122,7 @@ public class MainActivity extends ActionBarActivity {
         //calcula a itensidade proporcional de p para a ditancia
         float v;
         int d = ds[s];
-        Log.e("Distance:", "" + d);
+
         if(d <= dmax){v = (float) 1 - ((float) d/dmax);}
         else{v = 0.01f;}
 
@@ -143,39 +143,29 @@ public class MainActivity extends ActionBarActivity {
         if(s == 0){
             soundPool.setVolume(sf, v, 0);
             soundPool.setRate(sf, 1.4f);
-            Log.e("", "LEFT");
-            Log.e("", "volume set: " + v);
-            Log.e("", "Value: " + ds[s]);
-
         }
         //Top Left
         else if(s == 1){
-            soundPool.setVolume(sf, (v*3)/4 , v/4);
+            soundPool.setVolume(sf, (v * 3) / 4, v / 4);
             soundPool.setRate(sf, 1.2f);
-            Log.e("", "Top-LEFT");
-             Log.e("", "volume set: " + v);
         }
         //Front
         else if(s == 2){
             soundPool.setVolume(sf, v/2, v/2);
             soundPool.setRate(sf, 1.0f);
             Log.e("", "FRONT");
-             Log.e("", "volume set: " + v);
+            Log.e("Distance:", "" + d);
+            Log.e(" ", "volume set: " + v);
         }
         //Top Right
         else if(s == 3){
-            soundPool.setVolume(sf, v/4, (v*3)/4);
+            soundPool.setVolume(sf, v / 4, (v * 3) / 4);
             soundPool.setRate(sf, 0.8f);
-            Log.e("", "Top-RIGHT");
-            Log.e("", "volume set: " + v);
         }
         //RIGHT
         else if(s == 4){
             soundPool.setVolume(sf, 0, v);
             soundPool.setRate(sf, 0.6f);
-            Log.e("", "RIGHT");
-            Log.e("", "volume set: " + v);
-            Log.e("", "Value: " + ds[s]);
         }
     }
 
@@ -197,7 +187,6 @@ public class MainActivity extends ActionBarActivity {
         else if(s == 'e'){
             ds[0] = d;
         }
-        //Log.e("", "saved " + d + " to " + s);
     }
     ////-----HANDLER---
 
@@ -225,7 +214,6 @@ public class MainActivity extends ActionBarActivity {
     //handle all messages from bluetooth
     void handleMsg(String r){
         char[] c = r.toCharArray();
-        //Log.e("", r);
         for(int i = 0; i < c.length; i++){
             if(Character.isDigit(c[i])){
                 distance += c[i];
@@ -233,7 +221,9 @@ public class MainActivity extends ActionBarActivity {
             else if(Character.isLetter(c[i])){
                 if(distance != "") {
                     saveAudio(sensor, Integer.parseInt(distance));
-                    //Log.e("PLAY AUDIO", "Sensor: " + sensor + " Distance: " + distance);
+                    if(sensor == 'c'){
+                        //Log.e("Saved AUDIO", "Sensor: " + sensor + " Distance: " + distance);
+                    }
                     distance = "";
                 }
                 sensor = c[i];
