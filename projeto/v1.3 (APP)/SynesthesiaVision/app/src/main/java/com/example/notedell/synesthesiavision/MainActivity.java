@@ -15,19 +15,24 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
 
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = "MainActivity";
     Context c;
 
     SoundPool soundPool;
     private int sf;
 
+    Timer timerAtual;
+    Handler handler;
+
     Timer timer = new Timer();
-    int time = 250; //miliseconds
+    int time = 250; //milliseconds
     TimerTask task;
 
     int n_s = 5; //number of sensors
@@ -41,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
     TextView ps;
     TextView total;
     TextView valor_f;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         task = new TimerTask() {
             @Override
             public void run() {
-                Log.e("", "Timer: " + c_s);
+                //Log.e("", "Timer: " + c_s);
                 c_s ++;
                 if(c_s == n_s) c_s = 0;
                 playAudio(c_s);
@@ -87,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        //SeeBar
+        //SeekBar
         seek = (SeekBar) findViewById(R.id.frequency);
         seek.setProgress(time);
         ps = (TextView) findViewById(R.id.ps);
@@ -100,9 +106,22 @@ public class MainActivity extends AppCompatActivity {
                 time = progress;
                 ps.setText("" + time);
                 total.setText("" + ((float)(time * n_s)/1000));
-                timer.cancel();
-                timer.scheduleAtFixedRate(task, 0, time);
+
+                if(progress == 0) {
+                    Toast.makeText(MainActivity.this, "Valor incorreto", Toast.LENGTH_SHORT).show();
+                } else {
+                    if (timer != null) {
+                        timer.cancel();
+                        timer.purge();
+                        timer = null;
+
+                    } else {
+                        timer = new Timer();
+                        timer.scheduleAtFixedRate(task, 0, time);
+                    }
+                }
             }
+
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
@@ -118,13 +137,20 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    int dmax = 200;
-    public void playAudio(int s) {
+    private void playAudio(int s) {
         //calcula a itensidade proporcional de p para a ditancia
         float v;
+        float volume = 0;
+        float vlog;
         int d = ds[s];
+        int maxVolume = 50;
 
-        if(d <= dmax){v = (float) 1 - ((float) d/dmax);}
+        int dmax = 200;
+        if(d <= dmax){
+            v = (float) d/ dmax;
+            vlog = (float)(Math.log(maxVolume-v)/Math.log(maxVolume));
+            volume = 1 - vlog;
+        }
         else{v = 0.01f;}
 
         /*//calcula o volume e rate para cada lado
@@ -142,37 +168,40 @@ public class MainActivity extends AppCompatActivity {
 
         //LEFT
         if(s == 0){
-            soundPool.setVolume(sf, v, 0);
-            soundPool.setRate(sf, 1.4f);
+            soundPool.setVolume(sf, volume, volume/4);
+            soundPool.setRate(sf, 1.0f);
         }
         //Top Left
         else if(s == 1){
             soundPool.setVolume(sf, (v * 3) / 4, v / 4);
-            soundPool.setRate(sf, 1.2f);
+            soundPool.setRate(sf, 1.0f);
         }
         //Front
         else if(s == 2){
-            soundPool.setVolume(sf, v/2, v/2);
+            soundPool.setVolume(sf, volume/2, volume/2);
             soundPool.setRate(sf, 1.0f);
-            Log.e("", "FRONT");
-            Log.e("Distance:", "" + d);
-            Log.e(" ", "volume set: " + v);
+            //Log.i("", "FRONT");
+            //Log.i("Distance:", "" + d);
+           // Log.i(" ", "volume set: " + v);
         }
         //Top Right
         else if(s == 3){
             soundPool.setVolume(sf, v / 4, (v * 3) / 4);
-            soundPool.setRate(sf, 0.8f);
+            soundPool.setRate(sf, 1.0f);
         }
         //RIGHT
         else if(s == 4){
-            soundPool.setVolume(sf, 0, v);
-            soundPool.setRate(sf, 0.6f);
+            soundPool.setVolume(sf, volume/4, volume);
+            soundPool.setRate(sf, 1.0f);
         }
     }
 
 
     public void saveAudio(char s, int d) {
         //LEFT - RIGHT
+
+        Log.i(TAG, "" + d);
+
         if(s == 'a'){
             ds[4] = d;
         }

@@ -16,7 +16,8 @@ import java.util.UUID;
  *
  */
 
-public class BluetoothThread extends Thread {
+class BluetoothThread extends Thread {
+    private static final String TAG = "BluetoothThread";
     //private final BluetoothSocket mmSocket;
     private final BluetoothDevice mmDevice;
 
@@ -33,7 +34,7 @@ public class BluetoothThread extends Thread {
     InputStream tmpIn = null;
     OutputStream tmpOut = null;
 
-    public BluetoothThread(BluetoothDevice device, Handler h, BluetoothAdapter b) {
+    BluetoothThread(BluetoothDevice device, Handler h, BluetoothAdapter b) {
         mHandler = h;
         BA = b;
         mHandler.obtainMessage(CONNECTING).sendToTarget();
@@ -43,12 +44,16 @@ public class BluetoothThread extends Thread {
         try {
             // MY_UUID is the app's UUID string, also used by the server code
             socket =  device.createRfcommSocketToServiceRecord(UUID.fromString("00001101-0000-1000-8000-00805F9B34FB"));
-        } catch (IOException e) { }
+        } catch (IOException e) {
+            Log.e(TAG, "Socket not created");
+        }
 
         try {
             tmpIn = socket.getInputStream();
             tmpOut = socket.getOutputStream();
-        } catch (IOException e) { }
+        } catch (IOException e) {
+            Log.e(TAG, "Error Input/Output");
+        }
     }
 
     public void run() {
@@ -61,9 +66,11 @@ public class BluetoothThread extends Thread {
             // Unable to connect; close the socket and get out
             try {
                 mHandler.obtainMessage(FAILLED_CONNECT).sendToTarget();
-                Log.e("tag", "FAILLED");
+                Log.i(TAG, "FAILLED");
                 socket.close();
-            } catch (IOException closeException) { }
+            } catch (IOException e) {
+                Log.e(TAG, "Error, socket not closed");
+            }
             return;
         }
         mHandler.obtainMessage(SUCCESS_CONNECT).sendToTarget();

@@ -34,8 +34,6 @@ public class bt_connect extends Activity {
     private ImageView img;
     private TextView text;
 
-    private Set<BluetoothDevice> pairedDevices;
-
     private static final int SUCCESS_CONNECT = 0;
     private static final int FAILLED_CONNECT = 1;
     private static final int CONNECTING = 2;
@@ -88,6 +86,7 @@ public class bt_connect extends Activity {
 
         turnOnBluetooth();
     }
+
     void autoConnect(){
         SharedPreferences bt_name = getSharedPreferences(Storage, 0);
         String address = bt_name.getString("bt_address", "*");
@@ -98,11 +97,13 @@ public class bt_connect extends Activity {
             blueThread.start();
         }
     }
+
     void close(){
         this.finish();
     }
+
     void turnOnBluetooth(){
-        Log.e("", "wut");
+
         if (!BA.isEnabled()) {
             Intent turnOn = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(turnOn, 0);
@@ -112,8 +113,9 @@ public class bt_connect extends Activity {
             getDevices();
         }
     }
+
     void getDevices(){
-        pairedDevices = BA.getBondedDevices();
+        Set<BluetoothDevice> pairedDevices = BA.getBondedDevices();
 
         final ArrayList list = new ArrayList();
 
