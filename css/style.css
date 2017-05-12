@@ -976,7 +976,7 @@ h2.resp-accordion {
 	border-radius: 3px;
 	width: 100%;
 }
-.skillbar-title {
+.skillbar-1 {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -1771,7 +1771,7 @@ h4.w3ls-title {
 /*-- responsive-design --*/ 
 @media(max-width:1080px){
 .page-header__content .text-bg svg #title1, .page-header__content .text-bg svg #title2, .page-header__content .text-bg svg #title3, .page-header__content .text-bg svg #title4 {
-    font-size: 14em; 
+    font-size: 8em; 
 }
 p.bnrw3-agiletext {
     bottom: 23%;
@@ -1827,7 +1827,7 @@ h3.agileits-title, h2.agileits-title {
 }
 @media(max-width:1024px){
 .page-header__content .text-bg svg #title1, .page-header__content .text-bg svg #title2, .page-header__content .text-bg svg #title3, .page-header__content .text-bg svg #title4 {
-    font-size: 11em;
+    font-size: 7em;
 }
 p.bnrw3-agiletext {
     bottom: 29%; 
@@ -1955,7 +1955,7 @@ p.bnrw3-agiletext {
     right: 1%; 
 }
 .page-header__content .text-bg svg #title1, .page-header__content .text-bg svg #title2, .page-header__content .text-bg svg #title3, .page-header__content .text-bg svg #title4 {
-    font-size: 9em;
+    font-size: 6em;
 } 
 }
 @media(max-width:767px){
@@ -2127,7 +2127,7 @@ ul.simplefilter {
     padding: 1.5em 0;
 }
 .page-header__content .text-bg svg #title1, .page-header__content .text-bg svg #title2, .page-header__content .text-bg svg #title3, .page-header__content .text-bg svg #title4 {
-    font-size: 8em;
+    font-size: 5em;
 }
 .video {
     min-height: 470px;
@@ -2214,7 +2214,7 @@ h3.agileits-title, h2.agileits-title {
 }
 @media(max-width:480px){
 .page-header__content .text-bg svg #title1, .page-header__content .text-bg svg #title2, .page-header__content .text-bg svg #title3, .page-header__content .text-bg svg #title4 {
-    font-size: 6.5em;
+    font-size: 4em;
 }
 p.bnrw3-agiletext { 
     left: 10%;
@@ -2400,7 +2400,7 @@ h4.w3ls-title {
 }
 @media(max-width:375px){
 .page-header__content .text-bg svg #title1, .page-header__content .text-bg svg #title2, .page-header__content .text-bg svg #title3, .page-header__content .text-bg svg #title4 {
-    font-size: 5em;
+    font-size: 3em;
 }
 .view.view-first {
     width: 100%; 
@@ -2408,7 +2408,7 @@ h4.w3ls-title {
 }
 @media(max-width:320px){
 .page-header__content .text-bg svg #title1, .page-header__content .text-bg svg #title2, .page-header__content .text-bg svg #title3, .page-header__content .text-bg svg #title4 {
-    font-size: 4.5em;
+    font-size: 2em;
 }
 p.bnrw3-agiletext {  
     font-size: 0.85em;
