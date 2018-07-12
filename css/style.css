@@ -2474,5 +2474,11 @@ p.bnrw3-agiletext {
 .footer h3 {
     font-size: 1.6em;
 }
+	@media only screen and (min-width: 992px){
+		.container{
+			width:!important;
+		}
+	}
 } 
+
 /*-- //responsive-design --*/
