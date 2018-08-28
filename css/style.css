@@ -4,6 +4,37 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
+#myVideo {
+    position: relative;
+    right: 0;
+    top: 0;
+    min-width: 100%; 
+    max-height: 40%;
+}
+#content {
+    position: fixed;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+}
+/*#base {
+    position: fixed;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+}
+#defs{
+    position: fixed;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+}*/
 body{
 	margin:0;
 	font-family: 'Roboto Condensed', sans-serif;
@@ -448,7 +479,7 @@ h3.agileits-title.w3title2,h2.agileits-title.w3title2 {
 	transition:.5s all;
 }
 .services-grids h4 {
-    color: #878f99;
+    color: #1c3b61;
     font-size: 2em;
     margin: 0.8em 0 .5em;
     -webkit-transition: .5s all;
