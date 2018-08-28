@@ -19,6 +19,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     width: 100%;
     padding: 20px;
 }
+#modalDefinicao{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+#textoDefinicao{
+    color: #000;
+}
 /*#base {
     position: fixed;
     top: 0;

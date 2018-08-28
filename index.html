@@ -136,8 +136,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
                 <h6>Enxergar usando som.</h6>
                 <p class="wow slideInUp" style="text-align: justify">O projeto Synesthesia Vision utiliza
-                    <a>Audio Binaural</a> tridimensional para transformar distâncias em sons. Dessa maneira, pessoas com
-                    deficiências visuais terão um complemento para a bengala, ajudando com
+                    <a onclick="abrirModal()">Audio Binaural</a> tridimensional para transformar distâncias em sons. Dessa
+                    maneira, pessoas com deficiências visuais terão um complemento para a bengala, ajudando com
                     <b>obstáculos aéreos</b> e
                     <b>obstáculos grandes e distantes</b>
                 </p>
@@ -439,7 +439,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <h4>Aida Araújo</h4>
                 </div>
                 <div class="col-md-2 col-sm-2 col-xs-6 services-grids">
-                    <a href="" target="_blank">
+                    <a href="">
                         <img src="images/alaideMaria.jpg" style="border-radius: 50%;" />
                     </a>
                     <h4>
@@ -653,6 +653,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </p>
     </div>
 </div>
+<div class="modal fade" id="audio_binaural">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modalLabel" style="text-align:center">O que é áudio binaural?</h4>
+            </div>
+            <div class="modal-body" id="modalDefinicao">
+                <p id="textoDefinicao">
+                    A audição binaural, juntamente com a filtragem de frequências, permite aos animais determinar a direção da origem dos sons.
+                    É uma técnica de gravação e reprodução sonora bastante interessante, pois, com apenas dois microfones,
+                    é possível criar o efeito de som ambiente. Alguns áudios binaurais também são usados em terapias; tais
+                    áudios têm o poder para acessar em uma certa frequência o subconsciente humano, podendo alterar coisas
+                    no corpo como a liberação de endorfina, também usados para meditação.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- //footer -->
 
 <!-- ResponsiveTabs -->
@@ -729,7 +750,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="js/bootstrap.js"></script>
 <script>
-
+    function abrirModal() {
+        $("#audio_binaural").modal("show");
+    }
     $(document).ready(function () {
         // Activate Carousel
         $("#myCarousel").carousel();
