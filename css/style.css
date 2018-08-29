@@ -25,6 +25,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 #textoDefinicao{
     color: #000;
 }
+#teste{
+    position: fixed;
+}
 /*#base {
     position: fixed;
     top: 0;
@@ -2233,9 +2236,6 @@ p.bnrw3-agiletext {
 .view.view-first { 
     padding: 1em;
 }
-.view.view-first h5 { 
-    
-}
 figure.effect-jazz h4 {
     padding-top: 25%; 
 }
@@ -2343,9 +2343,6 @@ h3.agileits-title, h2.agileits-title {
 }
 .footer h3 {
     font-size: 1.8em; 
-}
-.view.view-first h5 {
-
 }
 .author-grid {
     padding: 1.5em; 
@@ -2513,7 +2510,7 @@ p.bnrw3-agiletext {
 }
 	@media only screen and (min-width: 992px){
 		.container{
-			width:!important;
+			width:important;
 		}
 	}
 } 
