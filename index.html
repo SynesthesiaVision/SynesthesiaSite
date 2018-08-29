@@ -29,6 +29,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- Jarallax -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jarallax/1.10.4/jarallax.css" />
     <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+    <script src="js/SmoothScroll.min.js"></script>
+    <script src="js/jarallax.js"></script>
+    <script src="https://unpkg.com/jarallax@1.9/dist/jarallax-video.min.js"></script>
+    <!-- js -->
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <script src="js/jarallax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jarallax/1.10.4/jarallax.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jarallax/1.10.4/jarallax-video.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jarallax/1.10.4/jarallax-element.js"></script>
+    <!-- //js -->
 
 </head>
 <!-- banner -->
@@ -114,20 +124,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </div>
         <!-- about-section -->
         <div class="about-section">
-            <div class="col-md-12">
+            <div class="col-md-12 col-sm-12">
                 <h3 class="agileits-title" alt>O que é?</h3>
                 <hr>
                 <br>
             </div>
 
-            <div class="col-md-7 ab-left w3-agileits">
+            <div class="col-md-7 col-sm-5 hidden-xs ab-left w3-agileits">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/jeBgqxqMVBA?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media"
                     allowfullscreen></iframe>
             </div>
 
 
-            <div class="col-md-5 ab-text w3-agileits">
-
+            <div class="col-md-5 col-sm-5 col-xs-12 ab-text w3-agileits">
                 <h6>Enxergar usando som.</h6>
                 <p class="wow slideInUp" style="text-align: justify">O projeto Synesthesia Vision utiliza
                     <a onclick="abrirModal()">Audio Binaural</a> tridimensional para transformar distâncias em sons. Dessa
@@ -135,6 +144,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <b>obstáculos aéreos</b> e
                     <b>obstáculos grandes e distantes</b>
                 </p>
+                <a onclick="abrirModal2()" style="text-align:center" class="hidden-sm hidden-md hidden-lg">Vídeo da entrevista</a>
             </div>
             <div class="clearfix"> </div>
         </div>
@@ -669,6 +679,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </div>
     </div>
 </div>
+<div class="modal fade" id="video_entrevista">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modalLabel" style="text-align:center">Entrevista Acontece IFPE</h4>
+            </div>
+            <div class="modal-body">
+                <iframe width="340" height="180" src="https://www.youtube.com/embed/jeBgqxqMVBA?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- //footer -->
 
 <!-- ResponsiveTabs -->
@@ -725,22 +751,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </script>
 <!-- //smooth-scrolling-of-move-up -->
 <!-- jarallax effect -->
-<script src="js/SmoothScroll.min.js"></script>
-<script src="js/jarallax.js"></script>
-<script src="https://unpkg.com/jarallax@1.9/dist/jarallax-video.min.js"></script>
-    <!-- js -->
-    <script src="js/jquery-2.2.3.min.js"></script>
-    <script src="js/jarallax.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jarallax/1.10.4/jarallax.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jarallax/1.10.4/jarallax-video.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jarallax/1.10.4/jarallax-element.js"></script>
-    <!-- //js -->
+
 <script type="text/javascript">
     /* init Jarallax */
     $('.jarallax').jarallax({
-    speed: 0.3,
-    noAndroid: true
-});
+        speed: 0.3,
+        noAndroid: true
+    });
 </script>
 <!-- //jarallax effect -->
 <!-- Bootstrap core JavaScript
@@ -750,6 +767,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script>
     function abrirModal() {
         $("#audio_binaural").modal("show");
+    }
+    function abrirModal2() {
+        $("#video_entrevista").modal("show");
     }
     $(document).ready(function () {
         // Activate Carousel
