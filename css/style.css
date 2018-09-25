@@ -12,7 +12,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     max-height: 40%;
 }
 #content {
-    position: fixed;
+    position: relative;
     top: 0;
     background: rgba(0, 0, 0, 0.5);
     color: #f1f1f1;
