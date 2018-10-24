@@ -160,6 +160,33 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </div>
             <div class="clearfix"> </div>
         </div>
+         <div>
+            <p style="align-content: center ; color: white"> . </p>
+        </div>
+        <div class="about-section">
+            <div class="col-md-7 col-sm-5 col-xs-12 ab-left w3-agileits">
+                <h6 style="    font-size: 1.6em;
+                color: #008c9a;
+                line-height: 1.5em;
+                margin-bottom: 0.5em;
+                font-style: italic;
+                text-align:center;">Cegos podem andar de bicicleta?</h6>
+                <p class="wow slideInUp" style="text-align: justify">Daniel Kish é completamente cego desde que era um bebê, mas isso não o impediu de levar uma vida incrivelmente
+                    ativa que inclui realizar trilhas e praticar mountain bike. Para se embrenhar essas atividades, ele desenvolveu
+                    uma forma de ecolocalização humana utilizando ondas sonoras para construir um retrato mental do que o
+                    cerca. Seu método envolve estalar a língua contra o céu de sua boca. Quando Daniel Kish estala a sua
+                    língua, o mundo responde.
+                </p>
+                <a onclick="abrirModal4()" style="text-align:center" class="hidden-sm hidden-md hidden-lg">Veja o vídeo
+                </a>
+            </div>
+
+            <div class="col-md-5 col-sm-5 hidden-xs ab-text w3-agileits">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/lAtVOK04XvA" frameborder="0" allow="autoplay; encrypted-media"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
         <!-- //about-section -->
         <!-- about-section2 -->
         <div class="about-section abt-w3sec2" id="eventos">
@@ -493,9 +520,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <h4>Arquivo de impressão</h4>
         </div>
         <div class="col-md-12 col-sm-12 col-lg-12 col-xs-6 services-grids">
-            <a href="https://www.youtube.com/watch?v=y-ENaM8q6xM" target="_blank">
+            <button onclick="abrirModal3()">
                 <img src="images/youtube-icon.png" style="border-radius:50%;">
-            </a>
+            </button>
             <h4>Experimente o som 3d</h4>
         </div>
     </div>
@@ -779,6 +806,58 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </div>
     </div>
 </div>
+<div class="modal fade" id="video_entrevista">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modalLabel" style="text-align:center">Entrevista Acontece IFPE</h4>
+            </div>
+            <div class="modal-body">
+                <iframe width="340" height="180" src="https://www.youtube.com/embed/jeBgqxqMVBA?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="blindBike">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <iframe width="340" height="180" src="https://www.youtube.com/embed/lAtVOK04XvA" frameborder="0" allow="autoplay; encrypted-media"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="selectAudio">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modalLabel" style="text-align:center">Áudios disponíveis</h4>
+            </div>
+            <div class="modal-body">
+                <p>Selecione um áudio para escutar:</p>
+                <select name="audios" onchange="javascript:handleSelect(this)">
+                    <option value="" selected></option>
+                    <option value="https://www.youtube.com/watch?v=y-ENaM8q6xM">O barbeiro</option>
+                    <option value="https://www.youtube.com/watch?v=iMMDnYkTnjw">Briga de Casal</option>
+                    <option value="https://www.youtube.com/watch?v=Xjh175A0DyU">Aprendendo a voar</option>
+                    <option value="https://www.youtube.com/watch?v=PxIZOHU-yGU">O atirador de facas</option>
+                    <option value="https://www.youtube.com/watch?v=M2yjCJ6rHS8">A bruxa da floresta</option>
+                </select>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- //footer -->
 
 <!-- ResponsiveTabs -->
@@ -859,6 +938,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
     function abrirModal2() {
         $("#video_entrevista").modal("show");
+    }
+    function abrirModal3() {
+        $("#selectAudio").modal("show");
+    }
+    function abrirModal4() {
+        $("#blindBike").modal("show");
     }
     $(document).ready(function () {
         // Activate Carousel
