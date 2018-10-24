@@ -519,12 +519,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </a>
             <h4>Arquivo de impressão</h4>
         </div>
-        <div class="col-md-12 col-sm-12 col-lg-12 col-xs-6 services-grids">
+        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6 services-grids">
             <button onclick="abrirModal3()">
                 <img src="images/youtube-icon.png" style="border-radius:50%;">
             </button>
             <h4>Experimente o som 3d</h4>
         </div>
+        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6 services-grids">
+            <a href="https://www.youtube.com/watch?v=xYWOiG5KZYU&feature=youtu.be" target="_blank">
+                <img src="images/youtube-icon.png" style="border-radius:50%;">
+            </a>
+                <h4>Conheça a história de Carlão</h4>
+            </div>
     </div>
 </div>
 <div>
@@ -1042,6 +1048,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         });
         $("#carousel4Right").click(function () {
             $("#myCarousel4").carousel("next");
+        });
+    });
+    function handleSelect(elm) {
+        window.location = elm.value;
+    }
+    $(document).ready(function () {
+        $('#link').on('change', function () {
+            var url = $(this).val();
+            if (url) {
+                window.open(url, '_blank');
+            }
+            return false;
         });
     });
 </script>
