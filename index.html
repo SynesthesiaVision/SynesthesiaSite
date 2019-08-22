@@ -596,6 +596,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </a>
             <h4>Conheça a história de Carlão</h4>
         </div>
+        <div>
+            <button onclick="abrirModal5()">
+                <img src="images/video-icon.png" style="border-radius:50%;">
+            </button>
+        </div>
     </div>
 </div>
 <div>
@@ -965,6 +970,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </div>
     </div>
 </div>
+<!--<div class="modal fade" id="videoTest">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modalLabel" style="text-align: center">Testes realizados</h4>
+            </div>
+            <div class="modal-body">
+                <p>Selecione um vídeo para assistir:</p>
+                <select name="videos" onchange="javascript:handleSelect(this)">
+                    <option value="" selected></option>
+                    <option value="video/testes/teste1"></option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>-->
 <!-- //footer -->
 
 <!-- ResponsiveTabs -->
@@ -1053,6 +1074,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
     function abrirModal4() {
         $("#blindBike").modal("show");
+    }
+
+    function abrirModal5() {
+        $("#videoTest").modal("show");
     }
 
     function speakText1() {
