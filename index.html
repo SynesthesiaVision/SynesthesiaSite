@@ -596,10 +596,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </a>
             <h4>Conheça a história de Carlão</h4>
         </div>
-        <div>
+        <div class="col-md-4 col-sm-4 col-lg-4 col-xs-6 services-grids">
             <button onclick="abrirModal5()">
                 <img src="images/video-icon.png" style="border-radius:50%;">
             </button>
+            <h4>Testes com os óculos</h4>
         </div>
     </div>
 </div>
@@ -956,7 +957,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="modal-body">
                 <p>Selecione um áudio para escutar:</p>
                 <select name="audios" onchange="javascript:handleSelect(this)">
-                    <option value="" selected></option>
+                    <option value="" selected>Escolha um vídeo abaixo</option>
                     <option value="https://www.youtube.com/watch?v=y-ENaM8q6xM">O barbeiro</option>
                     <option value="https://www.youtube.com/watch?v=iMMDnYkTnjw">Briga de Casal</option>
                     <option value="https://www.youtube.com/watch?v=Xjh175A0DyU">Aprendendo a voar</option>
@@ -970,7 +971,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </div>
     </div>
 </div>
-<!--<div class="modal fade" id="videoTest">
+<div class="modal fade" id="videoTest">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -979,13 +980,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="modal-body">
                 <p>Selecione um vídeo para assistir:</p>
                 <select name="videos" onchange="javascript:handleSelect(this)">
-                    <option value="" selected></option>
-                    <option value="video/testes/teste1"></option>
+                    <option value="" selected>Escolha um vídeo abaixo</option>
+                    <option value="video/testes/teste1.mp4" >Teste 1</option>
+                    <option value="video/testes/teste2.mp4" >Teste 2</option>
+                    <option value="video/testes/teste3.mp4" >Teste 3</option>
+                    <option value="video/testes/teste4.mp4" >Teste 4</option>
+                    <option value="video/testes/teste5.mp4" >Teste 5</option>
+                    <option value="video/testes/teste6.mp4" >Teste 6</option>
+                    <option value="video/testes/teste7.mp4" >Teste 7</option>
+                    <option value="video/testes/teste8.mp4" >Teste 8</option>
                 </select>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
             </div>
         </div>
     </div>
-</div>-->
+</div>
 <!-- //footer -->
 
 <!-- ResponsiveTabs -->
