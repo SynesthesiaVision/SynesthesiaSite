@@ -561,8 +561,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <h4>Códigos</h4>
         </div>
         <div class="col-md-4 col-sm-4 col-lg-4 col-xs-6 services-grids">
-            <a href="https://view.genial.ly/5bbf94c9f1420d649809c58b/manual-synesthesia" target="_blank">
-                <img src="images/genially-icon.png" style="border-radius:50%;">
+            <a href="documentacao/manualHardware.pdf" target="_blank">
+                <img src="images/pdf-icon.png" style="border-radius:50%;">
             </a>
             <h4>Manual de Montagem</h4>
         </div>
@@ -579,9 +579,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <h4>Arquivo de impressão</h4>
         </div>
         <div class="col-md-4 col-sm-4 col-lg-4 col-xs-6 services-grids">
-            <button onclick="abrirModal3()">
-                <img src="images/youtube-icon.png" style="border-radius:50%;">
-            </button>
+            <img src="images/youtube-icon.png" style="border-radius:50%;" onclick="abrirModal3()" />
+
             <h4>Experimente o som 3d</h4>
         </div>
         <div class="col-md-4 col-sm-4 col-lg-4 col-xs-6 services-grids">
@@ -591,9 +590,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <h4>Conheça a história de Carlão</h4>
         </div>
         <div class="col-md-4 col-sm-4 col-lg-4 col-xs-6 services-grids">
-            <button onclick="abrirModal5()">
-                <img src="images/video-icon.png" style="border-radius:50%;">
-            </button>
+            <img src="images/video-icon.png" style="border-radius:50%;" onclick="abrirModal5()">
             <h4>Testes com os óculos</h4>
         </div>
     </div>
@@ -682,12 +679,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <img src="images/pesquisadores/ionaMaria.jpg" style="border-radius: 50%;" />
                 </a>
                 <h4>
-                    Ioná Maria 
+                    Ioná Maria
                 </h4>
             </div>
             <div class="col-md-2 col-sm-2 col-lg-2 col-xs-6 services-grids">
                 <a href="http://lattes.cnpq.br/7872800016276301" target="_blank">
-                    <img src="images/pesquisadores/joaoVictor1.jpg" style="border-radius: 50%;" />
+                    <img src="images/pesquisadores/joaoVictor1.jpeg" style="border-radius: 50%;" />
                 </a>
                 <h4>João Victor</h4>
             </div>
@@ -975,14 +972,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <p>Selecione um vídeo para assistir:</p>
                 <select name="videos" onchange="javascript:handleSelect(this)">
                     <option value="" selected>Escolha um vídeo abaixo</option>
-                    <option value="video/testes/teste1.mp4" >Teste 1</option>
-                    <option value="video/testes/teste2.mp4" >Teste 2</option>
-                    <option value="video/testes/teste3.mp4" >Teste 3</option>
-                    <option value="video/testes/teste4.mp4" >Teste 4</option>
-                    <option value="video/testes/teste5.mp4" >Teste 5</option>
-                    <option value="video/testes/teste6.mp4" >Teste 6</option>
-                    <option value="video/testes/teste7.mp4" >Teste 7</option>
-                    <option value="video/testes/teste8.mp4" >Teste 8</option>
+                    <option value="video/testes/teste1.mp4">Teste 1</option>
+                    <option value="video/testes/teste2.mp4">Teste 2</option>
+                    <option value="video/testes/teste3.mp4">Teste 3</option>
+                    <option value="video/testes/teste4.mp4">Teste 4</option>
+                    <option value="video/testes/teste5.mp4">Teste 5</option>
+                    <option value="video/testes/teste6.mp4">Teste 6</option>
+                    <option value="video/testes/teste7.mp4">Teste 7</option>
+                    <option value="video/testes/teste8.mp4">Teste 8</option>
                 </select>
             </div>
             <div class="modal-footer">
@@ -1128,17 +1125,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     }
 
     function speakText7() {
-        var msg = new SpeechSynthesisUtterance('AMUPE - 2018. O Synesthesia marcou presença este ano no evento da Associação Municipalista de Pernambuco (Amupe). Com o tema Objetivos de Desenvolvimento Sustentável – Meta Global, Ação Municipal, o evento contou com palestras magnas, oficinas temáticas, apresentações culturais e exposições.');
+        var msg = new SpeechSynthesisUtterance(
+            'AMUPE - 2018. O Synesthesia marcou presença este ano no evento da Associação Municipalista de Pernambuco (Amupe). Com o tema Objetivos de Desenvolvimento Sustentável – Meta Global, Ação Municipal, o evento contou com palestras magnas, oficinas temáticas, apresentações culturais e exposições.'
+            );
         window.speechSynthesis.speak(msg);
     }
 
     function speakText8() {
-        var msg = new SpeechSynthesisUtterance('Revista Acontece IFPE - 2018. O projeto Synesthesia Vision participou da edição bimestral da Revista Acontece IFPE, publicada em Agosto de 2018.');
+        var msg = new SpeechSynthesisUtterance(
+            'Revista Acontece IFPE - 2018. O projeto Synesthesia Vision participou da edição bimestral da Revista Acontece IFPE, publicada em Agosto de 2018.'
+            );
         window.speechSynthesis.speak(msg);
     }
 
     function speakText9() {
-        var msg = new SpeechSynthesisUtterance('SBPC - 2019. O projeto Synesthesia Vision marcou presença na 71º Reunião da SBPC na cidade de Campo Grande, na Universidade Federal do Mato Grosso do Sul. Com o tema Ciência e Inovação nas Fronteiras da Bioeconomia, da Diversidade e do Desenvolvimento Social, o evento contou com palestras magnas, exposições, apresentações culturais.');
+        var msg = new SpeechSynthesisUtterance(
+            'SBPC - 2019. O projeto Synesthesia Vision marcou presença na 71º Reunião da SBPC na cidade de Campo Grande, na Universidade Federal do Mato Grosso do Sul. Com o tema Ciência e Inovação nas Fronteiras da Bioeconomia, da Diversidade e do Desenvolvimento Social, o evento contou com palestras magnas, exposições, apresentações culturais.'
+            );
         window.speechSynthesis.speak(msg);
     }
 
